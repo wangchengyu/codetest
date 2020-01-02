@@ -1,12 +1,11 @@
 <template>
   <ul>
     <li v-for="(pet, index) in sort(pets)" :key="index">
-      <slot name="pet" :pet="pet">{{ pet.name }}</slot>
+      <span >{{ pet.name }}</span>
     </li>
     <li v-if="!pets.length">--</li>
   </ul>
 </template>
-
 
 <script>
 export default {
@@ -15,23 +14,19 @@ export default {
   props: ['pets'],
   
   methods: {
-    sort (pets) {
-      return pets.sort(this._compare('name'));
+    sort (list) {
+      return list.sort(function (a, b) {a['name'].localeCompare(b['name']);});
     },
-
-    _compare (prop) {
-      return (a, b) => a[prop].localeCompare(b[prop]);
-    }
   }
 }
 </script>
 <style scoped>
 ul {
-    padding: 16px 64px;
+    padding: 18px 60px;
     margin: 0;
 }
 ul li {
-      height: 32px;
+      height: 34px;
       display: flex;
       align-items: center;
 }

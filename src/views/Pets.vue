@@ -1,51 +1,37 @@
 <template>
     <el-main >
-        <el-card shadow="always " header ="Pets List">
-        <PetOwnerGrade :items="petList" ></PetOwnerGrade>
+        <el-card shadow="always" header ="List of Pets' names">
+        <PetOwnerGrade :grades="ownersToGrades" ></PetOwnerGrade>
         </el-card>
     </el-main>
 </template>
 
 <script>
+import { mapGetters } from "vuex"
+import { GET_OWNERS } from "@/store/actions.type"
+import {OWNERS_GETTER_OWNERS} from "@/store/owners.getter.name";
 import PetOwnerGrade from "@/components/PetOwnerGrade"
+
+const QUERY_PET_TYPE = 'Cat';
 
 export default {
   name: 'pets',
 
-  data () { 
-      return { 
-          petList: this.getPets()
-      }
-  },
-
   components: { PetOwnerGrade },
 
-  computed: {
-    //pets: this.getPets()
-  },
-
   created () {
-    //this.getPets();
+    this.getOwners();
   },
 
   methods: {
-    getPets () {
-      return {
-        'Male': [
-            {name:'Jim'},
-            {name:'Garfield'},
-            
-            {name:'Max'},
-            {name:'Tom'}
-        ],
-        'Female': [
-            {name:'Simba'},
-            {name:'Tabby'},
-            {name:'Garfield'}
-        ]
-        }
-        //this.$store.dispatch(FETCH_PETS, this.type);
+    getOwners () {
+      this.$store.dispatch(GET_OWNERS, {type: QUERY_PET_TYPE});
     }
+  },
+
+  computed: {
+    ...mapGetters([OWNERS_GETTER_OWNERS])
   }
+
 }
 </script>

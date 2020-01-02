@@ -1,9 +1,9 @@
 <template>
   <div>
-    <NoData v-if="!Object.keys(items).length"/>
-    <div v-for="(key, index) in Object.keys(items)" :key="index" :class="box">
+    <NoData v-if="!Object.keys(grades).length"/>
+    <div v-for="(key, index) in Object.keys(grades)" :key="index" :class="box">
       <span class="grade">{{ key }} <small> (the owner's grade) </small></span>
-      <PetNames :pets="items[key]">
+      <PetNames :pets="grades[key]">
       </PetNames>
     </div>
   </div>
@@ -18,7 +18,7 @@ export default {
 
   components: { PetNames, NoData },
 
-  props: ['items']
+  props: ['grades']
 }
 </script>
 
