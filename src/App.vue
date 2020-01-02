@@ -1,36 +1,58 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button>el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <el-container id="app" >
+    <el-header>
+    <TopHeader />
+    </el-header>
+    <el-main>
+    <router-view />
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TopHeader from "@/components/TopHeader"
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+  name: 'App',
+  components: {TopHeader}
 }
 </script>
+<style >
+  .el-header {
+    background-color:#E6A23C;
+    color: #fff;
+    top: 5;
+    left: 10;
+    width: 100%;
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    z-index: 100;
+    position: relative;
+  }
+
+  
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+  }
+  
+  *, :before, :after {
+    box-sizing: border-box;
+  }
+ 
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    overflow: auto;
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #efefef;
+    color: #555;
+  }
+  
 </style>
