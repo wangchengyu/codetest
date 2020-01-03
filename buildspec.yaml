@@ -1,0 +1,65 @@
+version: 0.2
+
+env:
+  variables:
+     build_version: "0.1"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #secrets-manager:
+     # key: secret-id:json-key:version-stage:version-id
+     # key: secret-id:json-key:version-stage:version-id
+  #exported-variables:
+     # - variable
+     # - variable
+  #git-credential-helper: yes
+
+phases:
+  install:
+    #如果您使用的是 Ubuntu 标准映像 2.0 或更高版本，则必须指定运行时版本。
+    #如果您指定了运行时版本，但是使用 Ubuntu 标准映像 2.0 以外的映像，则构建将失败。
+    runtime-versions:
+      nodejs: 12
+      # name: version
+    commands:
+      - npm install
+      # - command
+  #pre_build:
+    #commands:
+      
+      # - command
+  build:
+    commands:
+      - npm run build
+      # - command
+  post_build:
+    commands:
+      - mv -r dist/* ./
+      - rm -rf .git
+      - rm -rf src/
+      - rm -rf node_modules/
+
+      # - command
+#reports:
+  #report-name-or-arn:
+    #files:
+      # - location
+      # - location
+    #base-directory: location
+    #discard-paths: yes
+    #file-format: JunitXml | CucumberJson
+artifacts:
+  files:
+    - 'dist/*'
+    - 'dist/js/*'
+    - 'dist/css/*'
+    - 'dist/img/*'
+    - 'dist/fonts/*'
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
