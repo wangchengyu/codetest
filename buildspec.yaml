@@ -35,10 +35,10 @@ phases:
       # - command
   post_build:
     commands:
-      - mv -r dist/* ./
-      - rm -rf .git
-      - rm -rf src/
-      - rm -rf node_modules/
+      # - mv -r dist/* ./
+      # - rm -rf .git
+      # - rm -rf src/
+      # - rm -rf node_modules/
 
       # - command
 #reports:
@@ -51,7 +51,11 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-    - '**/*'
+    - 'dist/*'
+    - 'dist/img/*'
+    - 'dist/js/*'
+    - 'dist/css/*'
+    - 'dist/fonts/*'
     # - location
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes

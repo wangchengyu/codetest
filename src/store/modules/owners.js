@@ -21,7 +21,7 @@ const actions = {
 
 const getters = {
   ownersToGrades (state) {
-    return state.grades;
+    return JSON.parse(JSON.stringify(state.grades));
   }
 };
 
@@ -33,16 +33,16 @@ const mutations = {
     var grades = {};
 
     if (state.owners.length) {
-        state.owners.map(owner => {
-        if (owner.pets && owner.pets.length) {
-          grades[owner.gender] = grades[owner.gender] || [];
-          grades[owner.gender] = grades[owner.gender].concat(owner.pets.filter(pet => pet.type === params.type));
+        for (let i in state.owners) {
+          let owner = state.owners[i];
+          if (owner.pets && owner.pets.length) {
+            grades[owner.gender] = grades[owner.gender] || [];
+            grades[owner.gender] = grades[owner.gender].concat(owner.pets.filter(pet => pet.type === params.type));
+          }
         }
-      });
     }
 
     state.grades = grades;
- 
   }
 };
 
