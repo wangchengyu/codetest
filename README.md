@@ -14,6 +14,11 @@ $ npm run serve
 
 > simple! just make a new commit in master branch, and push it!
 
+***I used the aws codepipeline to deploy this project into a elasticbeanstalk instance***
+![](https://codepipeline-ap-northeast-1-706527350082.s3-ap-northeast-1.amazonaws.com/codetest-pipeline/001.png)
+![](https://codepipeline-ap-northeast-1-706527350082.s3-ap-northeast-1.amazonaws.com/codetest-pipeline/002.png)
+
+
 # Where does it deploy to ?
 
 (http://codetest.ap-northeast-1.elasticbeanstalk.com)[http://codetest.ap-northeast-1.elasticbeanstalk.com]
