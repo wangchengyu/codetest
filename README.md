@@ -1,24 +1,24 @@
 # codetestpets
 
-## Project setup
+> this is a test demo
+
+# How to develop the project in local
 ```
-npm install
+$ git clone https://github.com/codetest
+$ cd codetest
+$ npm install
+$ npm run serve
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# How to deploy the project
 
-### Compiles and minifies for production
-```
-npm run build
-```
+> simple! just make a new commit in master branch, and push it!
 
-### Lints and fixes files
-```
-npm run lint
-```
+# Where does it deploy to ?
+
+(http://codetest.ap-northeast-1.elasticbeanstalk.com)[http://codetest.ap-northeast-1.elasticbeanstalk.com]
+
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
