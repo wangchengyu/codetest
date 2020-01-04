@@ -21,7 +21,7 @@ $ npm run serve
 
 # Where does it deploy to ?
 
-(http://codetest.ap-northeast-1.elasticbeanstalk.com)[http://codetest.ap-northeast-1.elasticbeanstalk.com]
+[http://codetest.ap-northeast-1.elasticbeanstalk.com](http://codetest.ap-northeast-1.elasticbeanstalk.com)
 
 
 
