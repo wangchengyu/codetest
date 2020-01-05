@@ -2,8 +2,11 @@ import ApiService from "@/apiservice"
 import { GET_CITYS, GET_WEATHER } from "@/store/actions.type"
 import { AFTER_GETCITYS, AFTER_GETWEATHER } from "@/store/mutations.type"
 
-const url_citys = 'http://localhost/api/weather/getCitys';
-const url_weather = 'http://localhost/api/weather/getWeather/cityCode/';
+const host = "http://codetest-weather-api.ap-northeast-1.elasticbeanstalk.com/";
+const api_path = 'api/weather/';
+
+const url_citys = host + api_path + 'getCitys';
+const url_weather = host + api_path + 'getWeather/cityCode/';
 
 const state = {
   citys: [],

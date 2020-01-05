@@ -23,6 +23,7 @@ $ npm run serve
 
 [http://codetest.ap-northeast-1.elasticbeanstalk.com](http://codetest.ap-northeast-1.elasticbeanstalk.com)
 
+>the frontend of ***weatherapi*** was contained to this project too!
 
 
 ### Customize configuration

@@ -19,8 +19,8 @@ export default {
 </script>
 <style >
   .el-header {
-    background-color:#E6A23C;
-    color: #fff;
+    background-color:#ffffff;
+    color: #409EFF;
     top: 5;
     left: 10;
     width: 100%;
@@ -29,16 +29,16 @@ export default {
     position: relative;
   }
 
-  
+
   .el-main {
     background-color: #E9EEF3;
     color: #333;
   }
-  
+
   *, :before, :after {
     box-sizing: border-box;
   }
- 
+
   html, body {
     height: 100%;
     margin: 0;
@@ -54,5 +54,5 @@ export default {
     background-color: #efefef;
     color: #555;
   }
-  
+
 </style>
